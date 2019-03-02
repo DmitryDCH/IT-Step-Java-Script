@@ -14,22 +14,22 @@ function get_data(){
         switch (middle_num) {
             case 1:
                 result.innerHTML = "Your result is " + middle_num + " it's very bad";
-                break;
+            break;
             case 2:
                 result.innerHTML = "Your result is " + middle_num + " it's bad";
-                break;
+            break;
             case 3:
                 result.innerHTML = "Your result is " + middle_num + " it's not bad";
-                break;
+            break;
             case 4:
                 result.innerHTML = "Your result is " + middle_num + " it's good";
-                break;
+            break;
             case 5:
                 result.innerHTML = "Your result is " + middle_num + " it's exellent";
                 break;
             default:
                 result.innerHTML = "Number must be less than 5 or bigger then 0";
-                break;
+            break;
         }
     }
 }
