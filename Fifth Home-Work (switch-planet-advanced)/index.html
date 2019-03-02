@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Planet</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <div class="container">
+       <div class="row">
+            <div class="col-6">
+                <div class="user-data">
+                    <div class="form-group">
+                        <label for="InputNumber">Which number of planer interested you ?</label>
+                        <input type="input" class="form-control number_planet" placeholder="Enter number of planet">
+                        <small id="Help" class="form-text text-muted">Number of planet must be bigger then 0 or less than 9</small>
+                        <button type="button" class="btn btn-primary btn-lg" onclick="get_data()">Done</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="result_block">
+                    <div class="result">
+                        <div class="text-title">
+
+                        </div>
+                        <div class="text">
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

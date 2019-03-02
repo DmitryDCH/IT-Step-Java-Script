@@ -1,0 +1,25 @@
+.user-data{
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.result_block{
+    height: 600px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.btn{
+    margin-top: 20px;
+}
+.text{
+    font-size: 35px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+.text-title{
+    font-size: 35px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
