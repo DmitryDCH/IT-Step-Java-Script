@@ -10,7 +10,7 @@ function money_data(){
           while(money > 0){
              var atraction_value = prompt("Enter value of atraction", '');
                if (atraction_value === null) {
-                  alert("cancel");
+                  alert("Cancel");
                return;
              }
              var atraction = +atraction_value;
@@ -63,3 +63,4 @@ function money_data(){
      }
      alert("You money is 0");
  }
+
