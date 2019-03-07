@@ -5,9 +5,13 @@ function Get_user_data(){
    
     var result = document.querySelector(".result");
 
-   // console.log(priceOfTrip(value_benz, distance, price));
-
-   result.innerHTML = priceOfTrip(value_benz, distance, price);
+   if (value_benz <= 0 || distance <= 0 || price <=0){
+       result.innerHTML = "Enter valid numbers (must be bigger then 0)";
+   } /*else if (typeof(value_benz === NaN) || typeof(distance === NaN) || typeof(price) === NaN) { 
+        result.innerHTML = "Please, enter numbers";
+   }*/ else {
+        result.innerHTML = priceOfTrip(value_benz, distance, price);
+   }
 }
 
 
@@ -15,4 +19,7 @@ function priceOfTrip(value_l, km, money){
     return  summ = ((km * 2 * value_l) / 100) * money;
 }
 
-/* */
+/* typeOf(NaN) === number ? */
+
+
+
