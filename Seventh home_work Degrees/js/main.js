@@ -8,7 +8,7 @@ function get_degrees(){
         var a = Math.floor(Math.random()*100);
         degrees_array.push(a);
     }
-    //console.log(degrees_array);
+    console.log(degrees_array);
     week_degrees.innerHTML = "Week degrees are " + degrees_array;
 
     var max = Math.max.apply(null, degrees_array);

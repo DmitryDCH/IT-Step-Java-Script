@@ -3,6 +3,7 @@ function get_data(){
     var number_multiplicate = +number;
     
     var result = document.querySelector(".result");
+    result.innerHTML = "";
 
     if(number_multiplicate <= 0 || number_multiplicate > 9 ){
         result.innerHTML = "Enter valid value";
