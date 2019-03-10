@@ -1,0 +1,18 @@
+.content{
+    height: 500px;
+}
+.input_1{
+    margin: 20px 0px;
+}
+.input_2{
+    margin: 20px 0px;
+}
+button{
+    margin: 10px 0px;
+}
+label{
+    font-size: 30px;
+}
+p{
+    font-size: 25px;
+}
