@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Function Advanced</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-6">
+                <div class="form-group">
+                   <label for="name">Name: </label>
+                   <input type="text" name="name" class="name get_name" placeholder="Enter your name">
+
+                   <label for="surname">Surname: </label>
+                   <input type="text" name="surname" class="surname get_surname" placeholder="Enter your surname">
+
+                   <label for="amount">Amount (max 50 000$)</label>
+                   <input type="text" name="amount" class="amount get_amount" placeholder="Enter value of money">
+
+                   <label for="amount">Period (max 24 mounth)</label>
+                   <input type="text" name="period" class="period get_period" placeholder="Enter period">
+
+                   <label for="id">Your ID</label>
+                   <input type="text" name="id" class="id get_id" placeholder="Enter your id">
+
+                   <button onclick="get_data()">Send</button>
+
+                   <div class="result"></div>
+                </div>
+            </div>
+            <div class="col-6 result_block">
+                <div class="result"></div>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

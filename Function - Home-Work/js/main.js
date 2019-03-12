@@ -3,7 +3,7 @@ function get_data(){
     var time = parseInt(document.querySelector(".value_time").value);
     var result = document.querySelector(".result");
 
-    if(distance <= 0 || time <= 0){
+    if(distance <= 0 || time <= 0 || isNaN(distance) || isNaN(time)){
         result.innerHTML = "Enter valid numbers";
     } else{
         result.innerHTML = "Your speed : " + simple_task(distance, time);

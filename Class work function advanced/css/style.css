@@ -1,0 +1,20 @@
+.form-group{
+    height: 700px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+button{
+    margin: 10px 0px;
+}
+.result_block {
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.result{
+    font-size: 30px;    
+}
