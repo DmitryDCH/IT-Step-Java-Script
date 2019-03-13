@@ -14,7 +14,20 @@ button{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 .result{
     font-size: 30px;    
+}
+
+.error{
+    font-size: 30px;
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}
+
+.result_name, .result_surname, .result_amount, .result_period, .result_id{
+    font-size: 25px;
+    font-weight: bold;
 }

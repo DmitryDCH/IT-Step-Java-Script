@@ -9,40 +9,53 @@ function get_data(){
 
 function validation(name, surname, amount, period, id){
     if (name.length < 3 || name.length > 16){
-        //var result = document.querySelector(".result");
-        //result.innerHTML = "Name must be bigger then 3 letters or less then 16 letters";
-        console.log("Name must be bigger then 3 letters or less then 16 letters");
+        var error = document.querySelector(".error");
+        error.innerHTML = "Name must be bigger then 3 letters or less then 16 letters";
     } else if (surname.length < 3 || surname.length > 16){
-        console.log("Surname must be bigger then 3 letters or less then 16 letters");
+        var error = document.querySelector(".error");
+        error.innerHTML = "Surname must be bigger then 3 letters or less then 16 letters";
     } else if (amount < 0 || amount > 50000){
-        console.log("You can request 50000$ or less");
+        var error = document.querySelector(".error");
+        error.innerHTML = "You can request 50000$ or less";
     } else if (isNaN(amount)){
-        console.log("Enter value of money");
+        var error = document.querySelector(".error");
+        error.innerHTML = "Enter value of money";
     } else if (isNaN(period)){
-        console.log("Enter value of period")
+        var error = document.querySelector(".error");
+        error.innerHTML = "Enter value of period";
     } else if (period < 0 || period > 24){
-        console.log("Period must be bigger then 0 and less then 24");
+        var error = document.querySelector(".error");
+        error.innerHTML = "Period must be bigger then 0 and less then 24";
     } else if (isNaN(id)){
-        console.log("Enter numbers in ID");
+        var error = document.querySelector(".error");
+        error.innerHTML = "Enter numbers in ID";
     } else{
         var name = name;
         var surname = surname;
         var amount = amount;
         var period = period;
-        var id = id;
-        console.log("Your name", name);
-        console.log(surname);
-        console.log(amount);
-        console.log(period);
-        console.log(id);
+        var id = "Your id is valid";
+
+        var result_name = document.querySelector(".result_name");
+        var result_surname = document.querySelector(".result_surname");
+        var result_amount = document.querySelector(".result_amount");
+        var result_period = document.querySelector(".result_period");
+        var result_id = document.querySelector(".result_id");
+        var error = document.querySelector(".error");
+
+        error.innerHTML = "";
+        result_name.innerHTML = "Your name: " + name;
+        result_surname.innerHTML = "Your surname: " + surname;
+        result_amount.innerHTML = "You take a: " + amount + "$" + " on " +  randomProcent(21) + "%";
+        result_period.innerHTML = "On " + period + " mounth";
+        result_id.innerHTML = id;
     }
 }
 
-function randomProcent(){
-    return Math.floor(Math.random() * 16);
+function randomProcent(number){
+    return Math.floor(Math.random() * number);
 }
 
-console.log(randomProcent());
 
-/* Enter cute text innerHTML*/
-/* condition on numbers in string (patterns)*/
+
+/* condition on numbers in string (patterns) in name, surname*/
