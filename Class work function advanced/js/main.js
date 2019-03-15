@@ -44,17 +44,21 @@ function validation(name, surname, amount, period, id){
         var result_id = document.querySelector(".result_id");
         var error = document.querySelector(".error");
 
+        var random_range15 = randomProcent(16);/* конструкция замыкания рандомного числа */
+
         error.innerHTML = "";
         result_name.innerHTML = "Your name: " + name;
         result_surname.innerHTML = "Your surname: " + surname;
-        result_amount.innerHTML = "You take a: " + amount + "$" + " on " +  randomProcent(21) + "%";
+        result_amount.innerHTML = "You take a: " + amount + "$" + " on " + random_range15() + "%"; /* вызов конструкции замыкание */
         result_period.innerHTML = "On " + period + " mounth";
-        result_id.innerHTML = id;
+        result_id.innerHTML = "Your id is valid" /* id */;
     }
 }
 
 function randomProcent(number){
-    return Math.floor(Math.random() * number);
+    return function(){
+       return Math.floor(Math.random() * number);
+    };
 }
 
 
