@@ -61,6 +61,20 @@ function randomProcent(number){
     };
 }
 
+/*
+    function random(){
+    var number_range = 16;
+    return function(){
+        return Math.floor(Math.random()* number_range);
+    }
+}
+
+    var random = random();
+    console.log(random());  
+
+    What better ? static range or no ?
+*/
+
 
 
 /* condition on numbers in string (patterns) in name, surname*/
