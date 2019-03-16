@@ -44,29 +44,32 @@ function validation(name, surname, amount, period, id){
         var result_id = document.querySelector(".result_id");
         var error = document.querySelector(".error");
 
-        var random_range15 = randomProcent(16);/* конструкция замыкания рандомного числа */
+        //var random_range15 = randomProcent(16);/* конструкция замыкания рандомного числа */
+        var random_procent = random();
 
         error.innerHTML = "";
         result_name.innerHTML = "Your name: " + name;
         result_surname.innerHTML = "Your surname: " + surname;
-        result_amount.innerHTML = "You take a: " + amount + "$" + " on " + random_range15() + "%"; /* вызов конструкции замыкание */
+        result_amount.innerHTML = "You take a: " + amount + "$" + " on " + /*random_range15()*/ random_procent()  + "%"; /* вызов конструкции замыкание */
         result_period.innerHTML = "On " + period + " mounth";
         result_id.innerHTML = "Your id is valid" /* id */;
     }
 }
 
+function random() {
+    var number_range = 16;
+    return function () {
+        return Math.floor(Math.random() * number_range);
+    }
+}
+
+
+/*
+
 function randomProcent(number){
     return function(){
        return Math.floor(Math.random() * number);
     };
-}
-
-/*
-    function random(){
-    var number_range = 16;
-    return function(){
-        return Math.floor(Math.random()* number_range);
-    }
 }
 
     var random = random();
