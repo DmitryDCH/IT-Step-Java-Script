@@ -76,6 +76,7 @@ function randomProcent(number){
     console.log(random());  
 
     What better ? static range or no ?
+    
 */
 
 
