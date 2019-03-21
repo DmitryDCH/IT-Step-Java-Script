@@ -5,6 +5,8 @@ function get_data(){
     var period = parseInt(document.querySelector(".get_period").value);
     var id = parseInt(document.querySelector(".get_id").value);
     validation(name, surname, amount, period,id);
+    saveArr(name, surname, amount, period,id);
+    //showData(name, surname, amount, period, id);
 }
 
 function validation(name, surname, amount, period, id){
@@ -53,6 +55,8 @@ function validation(name, surname, amount, period, id){
         result_amount.innerHTML = "You take a: " + amount + "$" + " on " + /*random_range15()*/ random_procent()  + "%"; /* вызов конструкции замыкание */
         result_period.innerHTML = "On " + period + " mounth";
         result_id.innerHTML = "Your id is valid" /* id */;
+
+        
     }
 }
 
@@ -63,22 +67,18 @@ function random() {
     }
 }
 
-
-/*
-
-function randomProcent(number){
-    return function(){
-       return Math.floor(Math.random() * number);
-    };
+function saveArr(name, surname, amount, period, id){
+    client_arr.push("Name: " + name);
+    client_arr.push("Surname: " + surname);
+    client_arr.push("Amount: " + amount);
+    client_arr.push("Period: " + period);
+    client_arr.push("Id: " + id);
 }
 
-    var random = random();
-    console.log(random());  
+function showData(name, surname, amount, period, id){
+    for (var i = 0; i < client_arr.length; i++){
+        console.log(client_arr[i]);
+    }
+}
 
-    What better ? static range or no ?
-    
-*/
-
-
-
-/* condition on numbers in string (patterns) in name, surname*/
+var client_arr = [];
