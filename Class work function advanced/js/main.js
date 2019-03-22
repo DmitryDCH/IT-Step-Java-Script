@@ -76,9 +76,16 @@ function saveArr(name, surname, amount, period, id){
 }
 
 function showData(name, surname, amount, period, id){
-    for (var i = 0; i < client_arr.length; i++){
+    /*for (var i = 0; i < client_arr.length; i++){
         console.log(client_arr[i]);
-    }
+    }*/
+    client_arr.forEach(function(item, key){
+        console.log(item, " ", key);
+      })
+      console.log("Client arr length", client_arr.length);
+      console.log("==============================>>>>>");
+      console.log("New Client Added");
+    
 }
 
 var client_arr = [];
