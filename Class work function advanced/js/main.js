@@ -1,3 +1,6 @@
+
+    var arr_users = [];
+
 function get_data(){
     var name = document.querySelector(".get_name").value;
     var surname = document.querySelector(".get_surname").value;
@@ -5,8 +8,6 @@ function get_data(){
     var period = parseInt(document.querySelector(".get_period").value);
     var id = parseInt(document.querySelector(".get_id").value);
     validation(name, surname, amount, period,id);
-    saveArr(name, surname, amount, period,id);
-    //showData(name, surname, amount, period, id);
 }
 
 function validation(name, surname, amount, period, id){
@@ -33,12 +34,6 @@ function validation(name, surname, amount, period, id){
         //var error = document.querySelector(".error");
         error.innerHTML = "Enter numbers in ID";
     } else{
-        //var name = name;
-        //var surname = surname;
-        //var amount = amount;
-        //var period = period;
-        //var id = "Your id is valid";
-
         var result_name = document.querySelector(".result_name");
         var result_surname = document.querySelector(".result_surname");
         var result_amount = document.querySelector(".result_amount");
@@ -46,7 +41,6 @@ function validation(name, surname, amount, period, id){
         var result_id = document.querySelector(".result_id");
         var error = document.querySelector(".error");
 
-        //var random_range15 = randomProcent(16);/* конструкция замыкания рандомного числа */
         var random_procent = random();
 
         error.innerHTML = "";
@@ -56,7 +50,9 @@ function validation(name, surname, amount, period, id){
         result_period.innerHTML = "On " + period + " mounth";
         result_id.innerHTML = "Your id is valid" /* id */;
 
-        
+        var user = new constructor_user(name, surname, amount, period, id);
+        arr_users.push(user);
+        console.log(arr_users);
     }
 }
 
@@ -67,25 +63,12 @@ function random() {
     }
 }
 
-function saveArr(name, surname, amount, period, id){
-    client_arr.push("Name: " + name);
-    client_arr.push("Surname: " + surname);
-    client_arr.push("Amount: " + amount);
-    client_arr.push("Period: " + period);
-    client_arr.push("Id: " + id);
+function constructor_user(name, surname, amount, period, id){
+    this.name = name;
+    this.surname = surname;
+    this.amount = amount;
+    this.period = period;
+    this.id = id;
 }
 
-function showData(name, surname, amount, period, id){
-    /*for (var i = 0; i < client_arr.length; i++){
-        console.log(client_arr[i]);
-    }*/
-    client_arr.forEach(function(item, key){
-        console.log(item, " ", key);
-      })
-      console.log("Client arr length", client_arr.length);
-      console.log("==============================>>>>>");
-      console.log("New Client Added");
-    
-}
-
-var client_arr = [];
+/* обновлять статус, forEach */
