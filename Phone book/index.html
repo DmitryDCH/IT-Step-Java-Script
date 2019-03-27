@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Number book</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-6">
+                <div class="form-group">
+                   <label for="name">Name: </label>
+                   <input type="text" name="name" class="name get_name" placeholder="Enter name">
+
+                   <label for="surname">Surname: </label>
+                   <input type="text" name="surname" class="surname get_surname" placeholder="Enter surname">
+
+                   <label for="number_phone">Phone number</label>
+                   <input type="number" name="amount" class="amount get_number" placeholder="Enter number">
+
+                   <button onclick="get_data()" class="btn btn-outline-success">Save on phone</button>
+                   <label for="del">What number to delete ? <!--(start with 0)--></label>
+                   <input type="number" name="del_num" class="get_number_to_delete" placeholder="Number to delete">
+                   <button onclick="del_num()" class="btn btn-outline-danger">Delete number</button>
+                   <button class="btn btn-outline-danger" onclick="delete_last()">Delete last number</button>
+                   <div class="result"></div>
+                </div>
+            </div>
+            <div class="col-6 result_block">
+                <p class="error"></p>
+                <p class="result_numb"></p>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

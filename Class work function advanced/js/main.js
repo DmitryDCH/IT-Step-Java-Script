@@ -1,5 +1,4 @@
-
-    var arr_users = [];
+var arr_users = [];
 
 function get_data(){
     var name = document.querySelector(".get_name").value;
@@ -13,25 +12,18 @@ function get_data(){
 function validation(name, surname, amount, period, id){
     var error = document.querySelector(".error");
     if (name.length < 3 || name.length > 16){
-        //var error = document.querySelector(".error");
         error.innerHTML = "Name must be bigger then 3 letters or less then 16 letters";
     } else if (surname.length < 3 || surname.length > 16){
-        //var error = document.querySelector(".error");
         error.innerHTML = "Surname must be bigger then 3 letters or less then 16 letters";
     } else if (amount < 0 || amount > 50000){
-        //var error = document.querySelector(".error");
         error.innerHTML = "You can request 50000$ or less";
     } else if (isNaN(amount)){
-        //var error = document.querySelector(".error");
         error.innerHTML = "Enter value of money";
     } else if (isNaN(period)){
-        //var error = document.querySelector(".error");
         error.innerHTML = "Enter value of period";
     } else if (period < 0 || period > 24){
-        //var error = document.querySelector(".error");
         error.innerHTML = "Period must be bigger then 0 and less then 24";
     } else if (isNaN(id)){
-        //var error = document.querySelector(".error");
         error.innerHTML = "Enter numbers in ID";
     } else{
         var result_name = document.querySelector(".result_name");
@@ -46,13 +38,16 @@ function validation(name, surname, amount, period, id){
         error.innerHTML = "";
         result_name.innerHTML = "Your name: " + name;
         result_surname.innerHTML = "Your surname: " + surname;
-        result_amount.innerHTML = "You take a: " + amount + "$" + " on " + /*random_range15()*/ random_procent()  + "%"; /* вызов конструкции замыкание */
+        result_amount.innerHTML = "You take a: " + amount + "$" + " on " + random_procent()  + "%";
         result_period.innerHTML = "On " + period + " mounth";
         result_id.innerHTML = "Your id is valid" /* id */;
 
         var user = new constructor_user(name, surname, amount, period, id);
         arr_users.push(user);
         console.log(arr_users);
+        /*arr_users.forEach(function(item, key){
+           console.log(item); 
+        });*/
     }
 }
 
