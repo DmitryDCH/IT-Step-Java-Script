@@ -45,9 +45,6 @@ function validation(name, surname, amount, period, id){
         var user = new constructor_user(name, surname, amount, period, id);
         arr_users.push(user);
         console.log(arr_users);
-        /*arr_users.forEach(function(item, key){
-           console.log(item); 
-        });*/
     }
 }
 
@@ -66,4 +63,70 @@ function constructor_user(name, surname, amount, period, id){
     this.id = id;
 }
 
-/* обновлять статус, forEach */
+// -------------
+// start request
+// -------------
+
+var xhr = new XMLHttpRequest();
+  
+var url = "https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5";
+xhr.open("GET", url, true);
+  
+xhr.send();
+  
+xhr.onreadystatechange = function() {
+    if (xhr.readyState != 4) return;
+  
+    if (xhr.status != 200) {
+        var errStatus = xhr.status;
+        var errText = xhr.statusText;
+        console.log(errStatus + ": " + errText);
+    } else {
+        var data = JSON.parse(xhr.responseText);
+        ShowCurrency(data);
+        req_table(data);
+        console.log(data);
+      }
+    };
+function ShowCurrency(data) {
+    for(var i = 0; i < data.length; i++){
+      console.log(` ${data[i].ccy} / ${data[i].base_ccy} Buy ${data[i].buy} Sell ${data[i].sale} `);
+    } 
+}
+
+function req_table(data){
+    var usd = document.querySelector(".usd");
+    usd.innerHTML = (data[0].ccy);
+    var eur = document.querySelector(".eur");
+    eur.innerHTML = (data[1].ccy);
+    var rur = document.querySelector(".rur");
+    rur.innerHTML = (data[2].ccy);
+    var btc = document.querySelector(".btc");
+    btc.innerHTML = (data[3].ccy);
+
+    var usd_buy = document.querySelector(".usd_buy");
+    usd_buy.innerHTML = data[0].buy;
+
+    var usd_sale = document.querySelector(".usd_sell");
+    usd_sale.innerHTML = data[0].sale;
+
+    var eur_buy = document.querySelector(".eur_buy");
+    eur_buy.innerHTML = data[1].buy;
+
+    var eur_sell = document.querySelector(".eur_sell");
+    eur_sell.innerHTML = data[1].sale;
+
+    var rur_buy = document.querySelector(".rur_buy");
+    rur_buy.innerHTML = data[2].buy;
+
+    var rur_sell = document.querySelector(".rur_sell");
+    rur_sell.innerHTML = data[2].sale;
+
+    var btc_buy = document.querySelector(".btc_buy");
+    btc_buy.innerHTML = data[3].buy;
+
+    var btc_sell = document.querySelector(".btc_sell");
+    btc_sell.innerHTML = data[3].sale;
+}
+
+

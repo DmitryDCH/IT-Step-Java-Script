@@ -28,7 +28,7 @@
                    <label for="id">Your ID</label>
                    <input type="text" name="id" class="id get_id" placeholder="Enter your id">
 
-                   <button onclick="get_data()">Send</button>
+                   <button onclick="get_data()" class="btn btn-success">Send</button>
 
                    <div class="result"></div>
                 </div>
@@ -40,6 +40,40 @@
                 <p class="result_amount"></p>
                 <p class="result_period"></p>
                 <p class="result_id"></p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">   
+            <div class="col-12 d-flex justify-content-center">
+                <table cellspacing="2" border="1" cellpadding="15" width="600" style="text-align: center; font-size: 20px; font-weight: bolder">
+                    <tr>
+                        <td>Currency</td>
+                        <td>UAH (buy)</td>
+                        <td>UAH (sell)</td>
+                    </tr>
+                    <tr>
+                        <td class="usd"></td>
+                        <td class="usd_buy"></td>
+                        <td class="usd_sell"></td>
+                    </tr>
+                    <tr>
+                        <td class="eur"></td>
+                        <td class="eur_buy"></td>
+                        <td class="eur_sell"></td>
+                    </tr>
+                    <tr>
+                        <td class="rur"></td>
+                        <td class="rur_buy"></td>
+                        <td class="rur_sell"></td>
+                    </tr>
+                    <tr>
+                        <td class="btc"></td>
+                        <td class="btc_buy"></td>
+                        <td class="btc_sell"></td>
+                    </tr>
+                </table>
+            
             </div>
         </div>
     </div>

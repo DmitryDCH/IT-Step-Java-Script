@@ -1,20 +1,21 @@
 .form-group{
-    height: 700px;
+    height: 400px;
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
+    padding-top: 50px;
 }
-
 button{
     margin: 10px 0px;
 }
 .result_block {
-    height: 700px;
+    height: 400px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     flex-direction: column;
+    padding-top: 50px;
 }
 .result{
     font-size: 30px;    
