@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="day_style">
     <div class="container">
         <div class="row justify-content-between">
             <div class="col-6">
@@ -28,7 +28,7 @@
                    <label for="id">Your ID</label>
                    <input type="text" name="id" class="id get_id" placeholder="Enter your id">
 
-                   <button onclick="get_data()" class="btn btn-success">Send</button>
+                   <button onclick="get_data()" class="btn btn-success toggler2">Send</button>
 
                    <div class="result"></div>
                 </div>
@@ -73,7 +73,9 @@
                         <td class="btc_sell"></td>
                     </tr>
                 </table>
-            
+            </div>
+            <div class="button_wrapper">
+                <button class="btn btn-success toggler" onclick="set_int()">Night</button>
             </div>
         </div>
     </div>

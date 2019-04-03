@@ -129,4 +129,38 @@ function req_table(data){
     btc_sell.innerHTML = data[3].sale;
 }
 
+function set_int(){
+    var body = document.querySelector("body");
+    var body_class = body.getAttribute("class");
+    
+    
+    var button = document.querySelector(".toggler");
+    var button_send = document.querySelector(".toggler2");
+    
+    var table = document.querySelector("table");
+
+    if(body_class == "day_style"){
+        body.setAttribute("class","night_style");
+
+        button.innerHTML = "Day";
+        button.setAttribute("class","btn btn-danger toggler");
+        button_send.setAttribute("class","btn btn-primary toggler2");
+
+        table.setAttribute("style","font-size:50px");
+        table.setAttribute("border","3px");
+        table.setAttribute("bordercolor","green");
+        
+    } else{
+        body.setAttribute("class","day_style");
+
+        button.innerHTML = "Night";
+        button.setAttribute("class","btn btn-success toggler");
+        button_send.setAttribute("class","btn btn-success toggler2");
+
+        table.setAttribute("style","font-size:20px");
+        table.setAttribute("bordercolor","black");
+        table.setAttribute("border","1px");
+    }
+}
+
 
