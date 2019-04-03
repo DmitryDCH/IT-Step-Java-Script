@@ -145,18 +145,18 @@ function set_int(){
         button.innerHTML = "Day";
         button.setAttribute("class","btn btn-danger toggler");
         button_send.setAttribute("class","btn btn-primary toggler2");
-
+        /* Created */
         table.setAttribute("style","font-size:50px");
         table.setAttribute("border","3px");
         table.setAttribute("bordercolor","green");
-        
+        /* by */
     } else{
         body.setAttribute("class","day_style");
 
         button.innerHTML = "Night";
         button.setAttribute("class","btn btn-success toggler");
         button_send.setAttribute("class","btn btn-success toggler2");
-
+        /* https://github.com/DmitryDCH */
         table.setAttribute("style","font-size:20px");
         table.setAttribute("bordercolor","black");
         table.setAttribute("border","1px");
