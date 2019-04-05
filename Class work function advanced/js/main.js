@@ -26,27 +26,42 @@ function validation(name, surname, amount, period, id){
     } else if (isNaN(id)){
         error.innerHTML = "Enter numbers in ID";
     } else{
-        var result_name = document.querySelector(".result_name");
-        var result_surname = document.querySelector(".result_surname");
-        var result_amount = document.querySelector(".result_amount");
-        var result_period = document.querySelector(".result_period");
-        var result_id = document.querySelector(".result_id");
-        var error = document.querySelector(".error");
-
-        var random_procent = random();
-
         error.innerHTML = "";
-        result_name.innerHTML = "Your name: " + name;
-        result_surname.innerHTML = "Your surname: " + surname;
-        result_amount.innerHTML = "You take a: " + amount + "$" + " on " + random_procent()  + "%";
-        result_period.innerHTML = "On " + period + " mounth";
-        result_id.innerHTML = "Your id is valid" /* id */;
-
         var user = new constructor_user(name, surname, amount, period, id);
         arr_users.push(user);
-        console.log(arr_users);
+        generated();
     }
 }
+
+/* start gener user data */
+function generated(){
+    var root_element = document.querySelector("#js_output");
+    var tr = document.createElement("tr");
+    var td1 = document.createElement("td");
+    var td2 = document.createElement("td");
+    var td3 = document.createElement("td");
+    var td4 = document.createElement("td");
+    var td5 = document.createElement("td");
+    //var td6 = document.createElement("td");
+
+    root_element.appendChild(tr);
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+    tr.appendChild(td4);
+    tr.appendChild(td5);
+    //tr.appendChild(td6);
+
+
+    for(var i = 0; i < arr_users.length; i++){
+        td1.innerHTML = arr_users[i].name;
+        td2.innerHTML = arr_users[i].surname;
+        td3.innerHTML = arr_users[i].amount;
+        td4.innerHTML = arr_users[i].period;
+        td5.innerHTML = arr_users[i].id;
+    }
+}
+/* end gener user data */
 
 function random() {
     var number_range = 16;
@@ -83,17 +98,18 @@ xhr.onreadystatechange = function() {
         console.log(errStatus + ": " + errText);
     } else {
         var data = JSON.parse(xhr.responseText);
-        ShowCurrency(data);
+        //ShowCurrency(data);
         req_table(data);
-        console.log(data);
+        //console.log(data);
       }
     };
+/*
 function ShowCurrency(data) {
     for(var i = 0; i < data.length; i++){
       console.log(` ${data[i].ccy} / ${data[i].base_ccy} Buy ${data[i].buy} Sell ${data[i].sale} `);
     } 
 }
-
+*/
 function req_table(data){
     var usd = document.querySelector(".usd");
     usd.innerHTML = (data[0].ccy);
@@ -146,7 +162,7 @@ function set_int(){
         button.setAttribute("class","btn btn-danger toggler");
         button_send.setAttribute("class","btn btn-primary toggler2");
         /* Created */
-        table.setAttribute("style","font-size:50px");
+        //table.setAttribute("style","font-size:50px");
         table.setAttribute("border","3px");
         table.setAttribute("bordercolor","green");
         /* by */
@@ -162,5 +178,6 @@ function set_int(){
         table.setAttribute("border","1px");
     }
 }
+
 
 

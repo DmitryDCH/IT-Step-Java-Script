@@ -6,6 +6,12 @@
     justify-content: start;
     padding-top: 50px;
 }
+.output{
+    height: 400px;
+    display: flex;
+    align-items: start;
+    padding-top: 80px;
+}
 button{
     margin: 10px 0px;
 }
@@ -22,10 +28,9 @@ button{
 }
 
 .error{
-    font-size: 30px;
+    font-size: 16px;
     color: red;
     font-weight: bold;
-    text-align: center;
 }
 
 .result_name, .result_surname, .result_amount, .result_period, .result_id{
@@ -42,4 +47,8 @@ button{
 .night_style{
     background-color: #000000;
     color: forestgreen;
+}
+
+.table_users{
+    border: 2px solid black;
 }
