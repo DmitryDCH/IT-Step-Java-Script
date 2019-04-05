@@ -27,8 +27,10 @@ function validation(name, surname, amount, period, id){
         error.innerHTML = "Enter numbers in ID";
     } else{
         error.innerHTML = "";
-        var user = new constructor_user(name, surname, amount, period, id);
+        var random_number = random();
+        var user = new constructor_user(name, surname, amount, period, id, random_number);
         arr_users.push(user);
+        console.log(user);
         generated();
     }
 }
@@ -42,7 +44,7 @@ function generated(){
     var td3 = document.createElement("td");
     var td4 = document.createElement("td");
     var td5 = document.createElement("td");
-    //var td6 = document.createElement("td");
+    var td6 = document.createElement("td");
 
     root_element.appendChild(tr);
     tr.appendChild(td1);
@@ -50,7 +52,7 @@ function generated(){
     tr.appendChild(td3);
     tr.appendChild(td4);
     tr.appendChild(td5);
-    //tr.appendChild(td6);
+    tr.appendChild(td6);
 
 
     for(var i = 0; i < arr_users.length; i++){
@@ -59,6 +61,7 @@ function generated(){
         td3.innerHTML = arr_users[i].amount;
         td4.innerHTML = arr_users[i].period;
         td5.innerHTML = arr_users[i].id;
+        td6.innerHTML = arr_users[i].random_number;
     }
 }
 /* end gener user data */
@@ -69,13 +72,13 @@ function random() {
         return Math.floor(Math.random() * number_range);
     }
 }
-
-function constructor_user(name, surname, amount, period, id){
+function constructor_user(name, surname, amount, period, id, random_number){
     this.name = name;
     this.surname = surname;
     this.amount = amount;
     this.period = period;
     this.id = id;
+    this.random_number = random_number();
 }
 
 // -------------
